@@ -7,10 +7,14 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mysite.shop.item.dto.ItemDTO;
 
+import lombok.extern.log4j.Log4j2;
+
 @Controller
+@Log4j2
 public class ItemController {
 	
 
@@ -44,6 +48,19 @@ public class ItemController {
 		}
 		
 		model.addAttribute("list" ,list);
+		
+	}
+	
+	@GetMapping("Test/ex04")
+	public String ex04 (@RequestParam("param1") String p1, String param2 ,Model model) {
+		log.info("=========>"  +  p1 + "," + param2);			// 콘솔에 찍힘
+		model.addAttribute("param1",p1);
+		model.addAttribute("param2",param2);
+		return "Test/ex04";
+	}
+	
+	@GetMapping("Test/ex05")
+	public void ex05 () {
 		
 	}
 	

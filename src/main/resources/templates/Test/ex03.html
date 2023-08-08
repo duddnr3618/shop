@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thyeleaf.org">
+<html lang="en" xmlns:th="http://www.thyeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -7,6 +7,11 @@
 
 <body>
 	<h1>상품정보 리스트( if ,unless )</h1>
+	
+	<div>
+	<a th:href="@{/Test/ex04(param1='데이터1', param2='데이터2')}">매개변수 전달</a>
+	</div>
+	
 	<table border="1">
 		<thead>
 			<tr>
