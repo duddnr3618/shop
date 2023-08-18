@@ -59,7 +59,7 @@ public class ItemController {
 		return "Test/ex04";
 	}
 	
-	@GetMapping("Test/ex05")
+	@GetMapping(value = {"/Test/ex05","/Test/ex06"})
 	public void ex05 () {
 		
 	}
