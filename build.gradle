@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.2'
 	id 'io.spring.dependency-management' version '1.1.2'
+	
 	// queryDSL 추가
 	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
@@ -45,13 +46,17 @@ dependencies {
 	
 	//security
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.1.0'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
 	
-	//validation
+	// 시스템 검증 (validation)
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.1.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
 	
-	
+	// 로그인시 타임리프를 통해 인증 상태에 따라서 다른게 보여줌
+	// https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5
+	implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.1.0.RELEASE'
+
+
 }
 
 tasks.named('test') {

@@ -27,6 +27,14 @@ public class MemberController {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
+	// 로그인 창으로 이동
+	@GetMapping("/login")
+	public String login () {
+		return "member/memberLogin";
+	}
+	
+	
+	
 	@GetMapping("/new")
 	public String memberForm (Model model) {
 		model.addAttribute("memberFormDto", new MemberFormDto());
@@ -52,8 +60,13 @@ public class MemberController {
 		
 		// 콘솔에 출력
 		//log.info("-----------------> post 성공" + memberFormDto);
-		
 		return "redirect:/";
+	}
+	
+	@GetMapping("login/error")
+	public String loginError (Model model) {
+		model.addAttribute("loginErrorMsg" , "아이디 또는 패스워드가 잘못 되었습니다.");
+		return "member/memberLogin"; 
 	}
 
 }

@@ -1,0 +1,17 @@
+* 빌드 그레들 설정 / 라이브러리 설정 
+Jpa / DB 셋팅 / Security / Querydsl / validation
+
+* member 엔티티 생성 
+로그인 기능 (로그인 / 로그아웃 / 회원가입 / 권한에 따른 페이지 다르게 보이기 / 시큐리티 )
+
+*item 엔티티 생성
+상품등록 기능
+
+
+* cart(장바구니) 패키지 생성
+1.엔티티 생성 
+- 연관관계(fetch에 lazy로 만들어준다) 생성 member -> cart
+- 중간테이블을 만둘어 준다. cart <-> cart_item <-> item
+
+레파지토리 생성
+
