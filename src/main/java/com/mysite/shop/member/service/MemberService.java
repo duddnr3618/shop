@@ -63,6 +63,8 @@ public class MemberService implements UserDetailsService {
 		log.info("-------------------------> loadUserByUsername  " + member);
 		
 		//생성자를 만들 필요 없이 builder를 통해 객체를 만들수 있다.
+		
+		
 		return User.builder()
 				.username(member.getEmail())
 				.password(member.getPassword())

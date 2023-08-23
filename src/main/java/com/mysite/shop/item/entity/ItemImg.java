@@ -1,7 +1,5 @@
-package com.mysite.shop.cart.entity;
+package com.mysite.shop.item.entity;
 
-import com.mysite.shop.item.entity.Item;
-import com.mysite.shop.member.entity.Member;
 import com.mysite.shop.utils.entity.BaseEntity;
 
 import jakarta.persistence.Column;
@@ -18,22 +16,34 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class CartItem  {
+public class ItemImg extends BaseEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "cart_item_id")
+	@Column(name="Item_img_id")
 	private Long id;
 	
-	@ManyToOne	(fetch = FetchType.LAZY)	// cart가 one 상품이 many
-	@JoinColumn(name = "cart_id")
-	private Cart cart;
+	private String imgName;			// 이미지 파일명
+	
+	private String oriImgName;		// 실제 이미지 이름
+	
+	private String imgUrl;
+	
+	private String repImgYn;	// 대표 이미지 설정
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "item_id")
 	private Item item;
+
+	public void updateItemImg(String oriImgName, String imgName,  String imgUrl) {
+		
+		this.imgName = imgName;
+		this.oriImgName = oriImgName;
+		this.imgUrl = imgUrl;
+		
+	}
 	
 	
-	private int count;
+	
 
 }

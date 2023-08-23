@@ -47,7 +47,7 @@ public class SecurityConfig {
 		
 		//로그인 처리 ( Post 요청 : /user/login ) 
 		.formLogin((formLogin) -> formLogin
-		.loginPage("/members/login")
+		.loginPage("/member/login")
 				
 				// Spring Security 의 기본 설정 : ID 의 name = "usernanme"
 				//                             password 필드의 name = "password" 

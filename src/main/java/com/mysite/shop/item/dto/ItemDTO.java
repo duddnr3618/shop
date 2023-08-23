@@ -2,10 +2,12 @@ package com.mysite.shop.item.dto;
 
 import java.time.LocalDateTime;
 
+import com.mysite.shop.utils.entity.BaseEntity;
+
 import lombok.Data;
 
 @Data
-public class ItemDTO {
+public class ItemDTO extends BaseEntity {
 
 	private Long id;			// 상품 코드 
 	
@@ -19,8 +21,6 @@ public class ItemDTO {
 	
 	private String itemDetail;	// 상품 상세 설명 
 	
-	private LocalDateTime regTime;		// 등록 시간	
 	
-	private LocalDateTime updateTime;	// 수정 시간
 	
 }

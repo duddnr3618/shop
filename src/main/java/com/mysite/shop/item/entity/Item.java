@@ -3,6 +3,7 @@ package com.mysite.shop.item.entity;
 import java.time.LocalDateTime;
 
 import com.mysite.shop.item.constant.ItemSellStatus;
+import com.mysite.shop.utils.entity.BaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +19,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "item")
-public class Item {
+public class Item extends BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,9 +42,7 @@ public class Item {
 	@Column(nullable = false)
 	private String itemDetail;
 	
-	private LocalDateTime regTime;
-	
-	private LocalDateTime updateTime;
+
 	
 	
 }
