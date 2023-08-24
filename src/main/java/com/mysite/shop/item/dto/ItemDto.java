@@ -7,7 +7,7 @@ import com.mysite.shop.utils.entity.BaseEntity;
 import lombok.Data;
 
 @Data
-public class ItemDTO extends BaseEntity {
+public class ItemDto extends BaseEntity {
 
 	private Long id;			// 상품 코드 
 	

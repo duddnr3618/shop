@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mysite.shop.item.dto.ItemDTO;
+import com.mysite.shop.item.dto.ItemDto;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -21,13 +21,13 @@ public class ItemController {
 	@GetMapping("Test/ex01")
 	public String ex01 (Model model) {
 		
-		ItemDTO itemDTO = new ItemDTO();
-		itemDTO.setItemDetail("상품 상세 설명");
-		itemDTO.setItemName("상품 이름");
-		itemDTO.setPrice(10000);
-		itemDTO.setRegTime(LocalDateTime.now());
+		ItemDto itemDto = new ItemDto();
+		itemDto.setItemDetail("상품 상세 설명");
+		itemDto.setItemName("상품 이름");
+		itemDto.setPrice(10000);
+		itemDto.setRegTime(LocalDateTime.now());
 		
-		model.addAttribute("itemDTO" , itemDTO);
+		model.addAttribute("itemDTO" , itemDto);
 		
 		return "test/ex01";
 	}
@@ -35,16 +35,16 @@ public class ItemController {
 	@GetMapping(value={"Test/ex02","Test/ex03"})
 	public void ex02 (Model model) {
 		
-		List<ItemDTO> list = new ArrayList<>();
+		List<ItemDto> list = new ArrayList<>();
 
 		for(int i = 1 ; i <=10 ; i++) {
 		
-		ItemDTO itemDTO = new ItemDTO();
-		itemDTO.setItemDetail("상품 상세 설명" + i);
-		itemDTO.setItemName("상품 이름" + i);
-		itemDTO.setPrice(10000*i);
-		itemDTO.setRegTime(LocalDateTime.now());
-		list.add(itemDTO);
+		ItemDto itemDto = new ItemDto();
+		itemDto.setItemDetail("상품 상세 설명" + i);
+		itemDto.setItemName("상품 이름" + i);
+		itemDto.setPrice(10000*i);
+		itemDto.setRegTime(LocalDateTime.now());
+		list.add(itemDto);
 		}
 		
 		model.addAttribute("list" ,list);
